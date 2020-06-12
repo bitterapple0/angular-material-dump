@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "material-theme"
+    }
+  },
+  "defaultProject": "material-theme",
+  "cli": {
+    "analytics": false
+  }
 }
