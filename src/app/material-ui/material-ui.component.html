@@ -1,1 +1,74 @@
-<p>material-ui works!</p>
+ <!--The difference in how color property affects a button--> 
+<div>
+    <button mat-button color="warn">Normal</button>
+    <button mat-raised-button color="warn">Raised</button>
+    <button mat-flat-button color="warn">Flat</button>
+    <button mat-stroked-button color="warn">Stroked</button>
+</div>
+ <!--notice how fab button auto color is accent--> 
+<div>
+    <button mat-icon-button>Icon</button>
+    <button mat-fab>Fab</button>   
+    <button mat-mini-fab color="primary">Mini</button>
+</div>
+<!--default checked state is false-->
+<div>
+    <mat-button-toggle class="spacer" #btn checked="True">Toggle Button</mat-button-toggle>
+    <span>{{btn.checked}}</span>
+    <mat-button-toggle-group class="spacer" #toggle="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="1">One</mat-button-toggle>
+        <mat-button-toggle value="2">Two</mat-button-toggle>
+        <mat-button-toggle value="3">Three</mat-button-toggle>
+    </mat-button-toggle-group>
+    <span>{{toggle.value}}</span>
+</div>
+<!--Check out https://material.io/resources/icons/?style=baseline -->
+<div>
+    <mat-icon class="spacer">lock</mat-icon>
+    <mat-icon class="spacer">support</mat-icon>
+    <mat-icon class="spacer">brightness_high</mat-icon>
+    <button mat-icon-button color="primary">
+        <mat-icon>airplanemode_active</mat-icon>
+    </button>
+    <button mat-icon-button color="accent">
+        <mat-icon>bluetooth</mat-icon>
+    </button>
+</div>
+
+<div>
+    <button mat-icon-button color="accent">
+        <mat-icon 
+        [matBadge]="notification_1" 
+        [matBadgeHidden]="notification_1 === 0" 
+        matBadgeSize="small"
+        color="warn">bluetooth</mat-icon>
+    </button>
+    <span 
+    [matBadge]="notification_2"
+    matBadgeSize="medium"
+    matBadgePosition="below after"
+    matBadgeOverlap="false"
+    color="accent">Notification</span>
+
+    <button mat-raised-button (click)="loadData()">Load Spinner</button>
+    <mat-spinner *ngIf="show_spinner"></mat-spinner>
+<!--    <mat-progress-bar mode="indeterminate" *ngIf="show_spinner" aria-label="indeterminate"></mat-progress-bar>
+    <div class="small_containter">
+        <mat-progress-bar mode="buffer" *ngIf="show_spinner"></mat-progress-bar>
+    </div>
+    <div class="medium_containter">
+        <mat-progress-bar mode="query" *ngIf="show_spinner"></mat-progress-bar>
+    </div> 
+--> 
+</div>    
+
+<mat-toolbar color="primary" class="navbar">
+    <div>Title</div>
+    <div>
+        <button mat-raised-button color>No Color</button>
+        <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button color="warn">Warn</button>
+    </div>
+</mat-toolbar>
+
+
