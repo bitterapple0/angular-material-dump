@@ -1,74 +1,306 @@
  <!--The difference in how color property affects a button--> 
-<div>
-    <button mat-button color="warn">Normal</button>
-    <button mat-raised-button color="warn">Raised</button>
-    <button mat-flat-button color="warn">Flat</button>
-    <button mat-stroked-button color="warn">Stroked</button>
-</div>
- <!--notice how fab button auto color is accent--> 
-<div>
-    <button mat-icon-button>Icon</button>
-    <button mat-fab>Fab</button>   
-    <button mat-mini-fab color="primary">Mini</button>
-</div>
-<!--default checked state is false-->
-<div>
-    <mat-button-toggle class="spacer" #btn checked="True">Toggle Button</mat-button-toggle>
-    <span>{{btn.checked}}</span>
-    <mat-button-toggle-group class="spacer" #toggle="matButtonToggleGroup" multiple>
-        <mat-button-toggle value="1">One</mat-button-toggle>
-        <mat-button-toggle value="2">Two</mat-button-toggle>
-        <mat-button-toggle value="3">Three</mat-button-toggle>
-    </mat-button-toggle-group>
-    <span>{{toggle.value}}</span>
-</div>
-<!--Check out https://material.io/resources/icons/?style=baseline -->
-<div>
-    <mat-icon class="spacer">lock</mat-icon>
-    <mat-icon class="spacer">support</mat-icon>
-    <mat-icon class="spacer">brightness_high</mat-icon>
-    <button mat-icon-button color="primary">
-        <mat-icon>airplanemode_active</mat-icon>
-    </button>
-    <button mat-icon-button color="accent">
-        <mat-icon>bluetooth</mat-icon>
-    </button>
-</div>
-
-<div>
-    <button mat-icon-button color="accent">
-        <mat-icon 
-        [matBadge]="notification_1" 
-        [matBadgeHidden]="notification_1 === 0" 
-        matBadgeSize="small"
-        color="warn">bluetooth</mat-icon>
-    </button>
-    <span 
-    [matBadge]="notification_2"
-    matBadgeSize="medium"
-    matBadgePosition="below after"
-    matBadgeOverlap="false"
-    color="accent">Notification</span>
-
-    <button mat-raised-button (click)="loadData()">Load Spinner</button>
-    <mat-spinner *ngIf="show_spinner"></mat-spinner>
-<!--    <mat-progress-bar mode="indeterminate" *ngIf="show_spinner" aria-label="indeterminate"></mat-progress-bar>
-    <div class="small_containter">
-        <mat-progress-bar mode="buffer" *ngIf="show_spinner"></mat-progress-bar>
-    </div>
-    <div class="medium_containter">
-        <mat-progress-bar mode="query" *ngIf="show_spinner"></mat-progress-bar>
-    </div> 
---> 
-</div>    
-
-<mat-toolbar color="primary" class="navbar">
-    <div>Title</div>
+<div class="container">
     <div>
-        <button mat-raised-button color>No Color</button>
-        <button mat-raised-button color="accent">Accent</button>
-        <button mat-raised-button color="warn">Warn</button>
+        <button mat-button color="warn">Normal</button>
+        <button mat-raised-button color="warn">Raised</button>
+        <button mat-flat-button color="warn">Flat</button>
+        <button mat-stroked-button color="warn">Stroked</button>
     </div>
-</mat-toolbar>
+    <!--notice how fab button auto color is accent--> 
+    <div>
+        <button mat-icon-button>Icon</button>
+        <button mat-fab>Fab</button>   
+        <button mat-mini-fab color="primary">Mini</button>
+    </div>
+    <!--default checked state is false-->
+    <div>
+        <mat-button-toggle class="spacer" #btn checked="True">Toggle Button</mat-button-toggle>
+        <span>{{btn.checked}}</span>
+        <mat-button-toggle-group class="spacer" #toggle="matButtonToggleGroup" multiple>
+            <mat-button-toggle value="1">One</mat-button-toggle>
+            <mat-button-toggle value="2">Two</mat-button-toggle>
+            <mat-button-toggle value="3">Three</mat-button-toggle>
+        </mat-button-toggle-group>
+        <span>{{toggle.value}}</span>
+    </div>
+    <!--Check out https://material.io/resources/icons/?style=baseline -->
+    <div>
+        <mat-icon class="spacer">lock</mat-icon>
+        <mat-icon class="spacer">support</mat-icon>
+        <mat-icon class="spacer">brightness_high</mat-icon>
+        <button mat-icon-button color="primary">
+            <mat-icon>airplanemode_active</mat-icon>
+        </button>
+        <button mat-icon-button color="accent">
+            <mat-icon>bluetooth</mat-icon>
+        </button>
+    </div>
 
+    <div>
+        <button mat-icon-button color="accent">
+            <mat-icon 
+            [matBadge]="notification_1" 
+            [matBadgeHidden]="notification_1 === 0" 
+            matBadgeSize="small"
+            color="warn">bluetooth</mat-icon>
+        </button>
+        <span 
+        [matBadge]="notification_2"
+        matBadgeSize="medium"
+        matBadgePosition="below after"
+        matBadgeOverlap="false"
+        color="accent">Notification</span>
 
+        <button mat-raised-button (click)="loadData()">Load Spinner</button>
+        <mat-spinner *ngIf="show_spinner"></mat-spinner>
+    <!--    <mat-progress-bar mode="indeterminate" *ngIf="show_spinner" aria-label="indeterminate"></mat-progress-bar>
+        <div class="small_containter">
+            <mat-progress-bar mode="buffer" *ngIf="show_spinner"></mat-progress-bar>
+        </div>
+        <div class="medium_containter">
+            <mat-progress-bar mode="query" *ngIf="show_spinner"></mat-progress-bar>
+        </div> 
+    --> 
+    </div>    
+<!--Toolbar-->
+    <mat-toolbar class="navbar">
+        <div>Title</div>
+        <div>
+            <button mat-raised-button color>No Color</button>
+            <button mat-raised-button color="accent">Accent</button>
+            <button mat-raised-button color="warn">Warn</button>
+        </div>
+    </mat-toolbar>
+<!--Side Nav-->
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="side" [(opened)]="open_side">Sidenav
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <button class="spacer" mat-raised-button (click)="open_side=!open_side" color="primary">Property Binding Toggle</button>
+            <button class="spacer" mat-raised-button (click)="sidenav.toggle()" color="warn">Sidenav Toggle</button>
+            <div>
+                <p>This is the main content</p>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav2 mode="push">
+            <span>SideNav</span>
+            <button mat-raised-button (click)="sidenav2.close()">Close</button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <button class="spacer" mat-raised-button (click)="sidenav2.toggle()" color="warn">Sidenav Toggle</button>
+            <div>
+                <p>Push mode</p>
+            </div>
+        </mat-sidenav-content>
+        
+    </mat-sidenav-container>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav3 mode="Over">
+            <span>SideNav</span>
+            <button mat-raised-button (click)="sidenav3.close()">Close</button>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <button class="spacer" mat-raised-button (click)="sidenav3.toggle()" color="warn">Sidenav Toggle</button>
+            <div>
+                <p>Over Mode</p>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+<!--static Menu-->    
+    <div>
+        <button mat-flat-button [matMenuTriggerFor]="myMenu">Menu</button>
+        <mat-menu #myMenu="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="subMenu">Sub Menu</button>
+            <button mat-menu-item [matMenuTriggerFor]="subMenu2">Other item</button>
+        </mat-menu>
+        <mat-menu #subMenu="matMenu">
+            <button mat-menu-item>Sub Item 1</button>
+            <button mat-menu-item>Sub Item 2</button>
+            <button mat-menu-item>Sub Item 3</button>
+        </mat-menu>
+        <mat-menu #subMenu2="matMenu" yPosition="above">
+            <button mat-menu-item>other Item 1</button>
+            <button mat-menu-item>other Item 2</button>
+            <button mat-menu-item>other Item 3</button>
+        </mat-menu>
+    </div>
+<!--Dynamic Menu-->
+    <div>
+        <mat-menu #lazyMenu="matMenu">
+            <ng-template matMenuContent let-var1="text" let-var2="name">
+                <button mat-menu-item>Name: {{var2}}</button>
+                <button mat-menu-item>Logout {{var1}}</button>
+            </ng-template>
+        </mat-menu>
+        <button 
+        mat-raised-button 
+        [matMenuTriggerData]="{text : 'Hello', name: 'john'}" 
+        [matMenuTriggerFor]="lazyMenu">
+        Hello
+        </button>
+        <button 
+        mat-raised-button 
+        [matMenuTriggerData]="{text : 'World', name:'doe'}"
+        [matMenuTriggerFor]="lazyMenu">World</button>
+    </div>
+ <!--Default Background color for list is Transparent, theme only changes text color-->   
+    <div>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon matListIcon>home</mat-icon>
+                <h1 matLine>Home</h1>
+                <p matLine>Text</p>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>folder</mat-icon>
+                <h1 matLine>Folder</h1>
+                <p matLine>Text</p>
+            </mat-list-item>
+        </mat-list>
+        <mat-list dense>
+            <mat-list-item>item 1 (dense for smaller text)</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>item 2</mat-list-item>
+        </mat-list>
+
+        <mat-selection-list>
+            <mat-list-option *ngFor="let item of Items">
+              {{item}}
+            </mat-list-option>
+        </mat-selection-list>
+
+        <mat-nav-list>
+            <a mat-list-item href="#">
+                <mat-icon matListIcon>home</mat-icon>
+                <h1 matLine>Home</h1>
+                <p matLine>Navigation List</p>
+            </a>
+            <a mat-list-item href="#">Setting (Navigation List)</a>
+        </mat-nav-list>
+    </div>
+<!--Grids, need to specify background color, themes doesnt change text color-->    
+    <div>
+        <mat-grid-list cols="2" rowHeight="fit" gutterSize="10px" >
+            <mat-grid-tile rowspan="2">1</mat-grid-tile>
+            <mat-grid-tile onclick="console.log('hello')">2</mat-grid-tile>
+            <mat-grid-tile>
+                <button mat-mini-fab onclick="console.log('hello')">
+                    3
+                </button>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">4</mat-grid-tile>
+        </mat-grid-list>
+    </div>
+<!--Expandable Tabs-->
+<!--Mat accodian allows for them to be grouped together, Multi makes them independent-->
+    <mat-accordion multi="true">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Expansion Panel
+                </mat-panel-title>
+                <mat-panel-description>
+                    Short Description Here
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the Content of the expanded panel</p>
+            <mat-action-row>
+                <button mat-raised-button>Justified Right</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Expansion Panel 2
+                </mat-panel-title>
+                <mat-panel-description>
+                    Short Description, alignment issue
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>This is the Content of the expanded panel</p>
+            <mat-action-row>
+                <button mat-raised-button>Justified Right</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+<!--Card Container-->
+<!--Seems like the best way to apply a dark background on the elements themselves-->
+    <mat-card>
+        <mat-card-title>
+            Card title
+        </mat-card-title>
+        <mat-card-content>
+            The Content goes here
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-flat-button>Login</button>
+        </mat-card-actions>
+        <mat-card-footer>
+            This is a footer
+        </mat-card-footer>
+    </mat-card>
+<!--View Tabs do not have background applied to them-->    
+    <mat-card>
+        <mat-card-content>       
+            <mat-tab-group #myTab (selectedTabChange)="log(myTab.selectedIndex)">
+                <mat-tab label="Label 1">Content 1, index {{myTab.selectedIndex}}</mat-tab>
+                <mat-tab label="Label 2">Content 2, index {{myTab.selectedIndex}}</mat-tab>
+                <mat-tab label="Label 3">Content 3, index {{myTab.selectedIndex}}</mat-tab>
+            </mat-tab-group>
+        </mat-card-content>    
+    </mat-card>
+<!--Steppers, the content inside dont follow the styling color??? FUcked up-->
+<!--Vertical version is available-->
+<!--If Linear, for each step must property bind to "completed". Can include "optional" property-->
+    <mat-horizontal-stepper>
+        <mat-step label="Address">
+            <p>Address Details</p>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Billing">
+            <p>Billing Details</p>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Payment">
+            <p>Payment Details</p>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+    <mat-vertical-stepper>
+        <mat-step label="Address">
+            <p>Address Details</p>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Billing">
+            <p>Billing Details</p>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Payment">
+            <p>Payment Details</p>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</div>
+  

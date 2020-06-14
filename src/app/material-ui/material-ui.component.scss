@@ -1,3 +1,6 @@
+.container{
+    height: 100vh
+}
 div{
     button{
         margin:1em 2em
@@ -22,4 +25,36 @@ div{
     width: 200px;
     height: 100px;
     margin:10px;
+}
+
+mat-sidenav-container{
+    height:10%;   //why when it is within div
+    margin:1em 0    
+}
+mat-sidenav{
+    padding:10px;
+    width:15%;
+
+    button{
+        margin:0
+    }
+}
+mat-list-item, mat-selection-list{
+    background-color: cadetblue;
+}
+mat-list, mat-list-option, mat-nav-list{
+    background-color: coral;
+}
+
+mat-grid-list{
+    height:300px
+}
+mat-grid-tile{
+    background-color: rgb(183, 243, 223);
+}
+mat-card{
+    margin: 1em 
+}
+mat-horizontal-stepper, mat-vertical-stepper{
+    margin: 1em
 }
