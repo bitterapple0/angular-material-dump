@@ -11,6 +11,7 @@ export class MaterialUiComponent implements OnInit {
   show_spinner:boolean = false;
   open_side= false;  
   Items: string[]=["item 1", "item 2", "item 3"]
+  themeColor: string[]=["primary","accent","warn"]
   loadData(){
     this.show_spinner = true;
     setTimeout(() => {

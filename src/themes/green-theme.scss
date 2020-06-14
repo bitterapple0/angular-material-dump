@@ -1,0 +1,8 @@
+//https://material.io/resources/color/#!/?view.left=0&view.right=0
+//Color tool to get desired color
+
+$primary: mat-palette($mat-green, 800);
+$accent: mat-palette($mat-lime, 800);
+$warn: mat-palette($mat-orange, 900);
+
+$green-theme:mat-dark-theme($primary,$accent,$warn)
