@@ -26,10 +26,10 @@
     }  
   // To change background/text color of stepper, expansion panel, sidenav
   // Very problematic: tab-label & stepper-label color doesnt change
-  mat-card, mat-horizontal-stepper{ 
+  /*mat-card, mat-horizontal-stepper{ 
     color: mat-color($foreground, text);
     background-color: mat-color($primary, 300) !important; 
-  }
+  }*/
   
 
 }

@@ -1,0 +1,40 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #snav>
+        <mat-nav-list>
+            <mat-list-item>
+                <h4 matLine routerLink='/material-ui'>Material UI</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <h4 matLine routerLink='/kitchen-sink'>Kitchen Sink</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <h4 matLine routerLink='/cdk'>CDK</h4>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <div>
+                <button mat-icon-button (click)="snav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+                    <mat-icon>format_color_fill</mat-icon>
+                </button>
+            </div>    
+            <mat-menu #themeMenu="matMenu">
+                <button mat-menu-item (click)="pickColor('blue')">
+                    <div class="color-indicator color-indicator-blue"></div>
+                    Blue
+                </button>
+                <button mat-menu-item (click)="pickColor('green')">
+                    <div class="color-indicator color-indicator-green"></div>
+                    Green
+                </button>
+            </mat-menu>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

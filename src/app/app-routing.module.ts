@@ -2,11 +2,30 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialUiComponent } from './material-ui/material-ui.component';
 import { CdkComponent } from './cdk/cdk.component';
+import { MaterialUiModule } from './material-ui/material-ui.module';
 
 
 const routes: Routes = [
-  {path:"material-ui", component: MaterialUiComponent},
-  {path:"cdk", component:CdkComponent}
+  {
+    path:"material-ui", 
+    loadChildren: () => import('./material-ui/material-ui.module').then(mod => mod.MaterialUiModule)
+  },
+  
+  {
+    path:"cdk", 
+    loadChildren:()=> import('./cdk/cdk.module').then(mod=>mod.CdkModule)
+  },
+
+  {
+    path:"kitchen-sink", 
+    loadChildren:()=> import('./kitchen-sink/kitchen-sink.module').then(mod=>mod.KitchenSinkModule)
+  },
+
+  {
+    path:'', 
+    redirectTo:"/kitchen-sink", 
+    pathMatch:"full"
+  }
 ];
 
 @NgModule({

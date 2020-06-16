@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+@import '../../themes/blue-theme.scss';
+@import '../../themes/green-theme.scss';
+ 
+mat-sidenav-container{
+    height:100vh
+}
+
+mat-toolbar{
+    justify-content: space-between;
+}
+
+.color-indicator{
+    width:15px;
+    height:15px;
+    border-radius: 50%;
+    display:inline-block;
+}
+
+.color-indicator-blue{
+    background-color: mat-color($primary-blue-theme);
+}
+
+.color-indicator-green{
+    background-color: mat-color($primary-green-theme);
+}
