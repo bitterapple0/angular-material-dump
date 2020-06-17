@@ -1,5 +1,0 @@
-@import '../app/material-ui/material-ui.component.scss-theme.scss';
-
-@mixin custom-component-theme($theme){
-    @include combined-component-theme($theme)
-}

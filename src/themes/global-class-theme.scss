@@ -1,15 +1,31 @@
 @import '~@angular/material/theming';
 //Import this so code is neater when specifying styles for color
-@import '../../themes/default-style/main-colors.scss';
+@import './default-style/main-colors.scss';
 
-@mixin combined-component-theme($theme) {
+@mixin global-class-theme($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $warn: map-get($theme, warn);
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background); 
 
-  mat-list, mat-selection-list, mat-nav-list, mat-grid-tile{
+    .basic-theme{
+      color: mat-color($foreground, text);
+      background-color: mat-color($background, card);
+    }
+    .primary-theme{
+      color: mat-color($primary, default-contrast);
+      background-color: mat-color($primary);
+    }
+    .accent-theme{
+      color: mat-color($foreground, text);
+      background-color: mat-color($accent);
+    }
+    .warn-theme{
+      color: mat-color($foreground, text);
+      background-color: mat-color($warn);
+    }
+    mat-list, mat-selection-list, mat-nav-list, mat-grid-tile{
       color: mat-color($foreground, text);
       background-color: mat-color($background, card);
       margin: 1em;
@@ -24,12 +40,4 @@
         @include main-colors ($warn);
       }
     }  
-  // To change background/text color of stepper, expansion panel, sidenav
-  // Very problematic: tab-label & stepper-label color doesnt change
-  /*mat-card, mat-horizontal-stepper{ 
-    color: mat-color($foreground, text);
-    background-color: mat-color($primary, 300) !important; 
-  }*/
-  
-
 }

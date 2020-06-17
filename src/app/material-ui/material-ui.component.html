@@ -1,10 +1,10 @@
  <!--The difference in how color property affects a button--> 
 <div class="container">
     <div>
-        <button mat-button color="warn">Normal</button>
+        <button mat-button color="primary">Normal</button>
         <button mat-raised-button color="warn">Raised</button>
-        <button mat-flat-button color="warn">Flat</button>
-        <button mat-stroked-button color="warn">Stroked</button>
+        <button mat-flat-button color="accent">Flat</button>
+        <button mat-stroked-button color="primary">Stroked</button>
     </div>
     <!--notice how fab button auto color is accent--> 
     <div>
@@ -72,8 +72,8 @@
         </div>
     </mat-toolbar>
 <!--Side Nav-->
-    <mat-sidenav-container>
-        <mat-sidenav #sidenav mode="side" [(opened)]="open_side">Sidenav
+    <mat-sidenav-container class="accent-theme">
+        <mat-sidenav #sidenav mode="side" [(opened)] ="open_side" class="primary-theme">Sidenav
         </mat-sidenav>
         <mat-sidenav-content>
             <button class="spacer" mat-raised-button (click)="open_side=!open_side" color="primary">Property Binding Toggle</button>
@@ -196,7 +196,7 @@
 <!--Expandable Tabs-->
 <!--Mat accodian allows for them to be grouped together, Multi makes them independent-->
     <mat-accordion multi="true">
-        <mat-expansion-panel>
+        <mat-expansion-panel class="primary-theme">
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Expansion Panel
@@ -211,7 +211,7 @@
             </mat-action-row>
         </mat-expansion-panel>
         
-        <mat-expansion-panel>
+        <mat-expansion-panel class="warn-theme">
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Expansion Panel 2
@@ -228,7 +228,7 @@
     </mat-accordion>
 <!--Card Container-->
 <!--Seems like the best way to apply a dark background on the elements themselves-->
-    <mat-card>
+    <mat-card class="warn-theme">
         <mat-card-title>
             Card title
         </mat-card-title>
@@ -243,7 +243,7 @@
         </mat-card-footer>
     </mat-card>
 <!--View Tabs do not have background applied to them-->    
-    <mat-card>
+    <mat-card class="warn-theme">
         <mat-card-content>       
             <mat-tab-group #myTab (selectedTabChange)="log(myTab.selectedIndex)">
                 <mat-tab label="Label 1">Content 1, index {{myTab.selectedIndex}}</mat-tab>
@@ -255,7 +255,10 @@
 <!--Steppers, the content inside dont follow the styling color??? FUcked up-->
 <!--Vertical version is available-->
 <!--If Linear, for each step must property bind to "completed". Can include "optional" property-->
-    <mat-horizontal-stepper>
+    <mat-horizontal-stepper class="accent-theme">
+        <ng-template matStepperIcon="edit" > 
+            <mat-icon>done</mat-icon>
+        </ng-template>
         <mat-step label="Address">
             <p>Address Details</p>
             <div>
@@ -279,7 +282,7 @@
         </mat-step>
     </mat-horizontal-stepper>
 
-    <mat-vertical-stepper>
+    <mat-vertical-stepper class="warn-theme">
         <mat-step label="Address">
             <p>Address Details</p>
             <div>

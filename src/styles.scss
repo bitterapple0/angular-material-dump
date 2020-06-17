@@ -4,18 +4,18 @@
 @import './themes/blue-theme.scss';
 @import './themes/green-theme.scss';
 // Custom Component Themes that follow theme
-@import './themes/custom-component-theme.scss';
+@import './themes/global-class-theme.scss';
 
 // Only include once
 @include mat-core();
 
 .blue-theme{
     @include angular-material-theme($blue-theme);
-    @include custom-component-theme($blue-theme);
+    @include global-class-theme($blue-theme);
 }
 .green-theme{
     @include angular-material-theme($green-theme);
-    @include custom-component-theme($green-theme);
+    @include global-class-theme($green-theme);
 }
 /* You can add global styles to this file, and also import other style files */
 
