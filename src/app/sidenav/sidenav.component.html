@@ -25,15 +25,16 @@
                 </button>
             </div>    
             <mat-menu #themeMenu="matMenu">
-                <button mat-menu-item (click)="pickColor('blue')">
+                <button mat-menu-item (click)="loadStyle('blue-style.css')">
                     <div class="color-indicator color-indicator-blue"></div>
                     Blue
                 </button>
-                <button mat-menu-item (click)="pickColor('green')">
+                <button mat-menu-item (click)="loadStyle('green-style.css')">
                     <div class="color-indicator color-indicator-green"></div>
                     Green
                 </button>
             </mat-menu>
+        
         </mat-toolbar>
         <router-outlet></router-outlet>
     </mat-sidenav-content>

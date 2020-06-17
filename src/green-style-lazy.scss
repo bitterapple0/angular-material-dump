@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import './themes/global-class-theme.scss';
+
+@include mat-core();
+
+$primary-green-theme: mat-palette($mat-green, 800);
+$accent-green-theme: mat-palette($mat-lime, 800);
+$warn-green-theme: mat-palette($mat-orange, 900);
+
+$green-theme:mat-dark-theme($primary-green-theme,$accent-green-theme,$warn-green-theme);
+
+.color-theme{
+    @include angular-material-theme($green-theme);
+    @include global-class-theme($green-theme);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

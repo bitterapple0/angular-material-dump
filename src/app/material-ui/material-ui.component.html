@@ -147,7 +147,7 @@
     </div>
  <!--Default Background color for list is Transparent, theme only changes text color-->   
     <div>
-        <mat-list [attr.color]="themeColor[0]">
+        <mat-list>
             <mat-list-item>
                 <mat-icon matListIcon>home</mat-icon>
                 <h1 matLine>Home</h1>
@@ -159,13 +159,13 @@
                 <p matLine>Text</p>
             </mat-list-item>
         </mat-list>
-        <mat-list dense [attr.color]="themeColor[1]">
+        <mat-list dense >
             <mat-list-item>item 1 (dense for smaller text)</mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>item 2</mat-list-item>
         </mat-list>
 
-        <mat-selection-list [attr.color]="themeColor[2]">
+        <mat-selection-list>
             <mat-list-option *ngFor="let item of Items">
               {{item}}
             </mat-list-option>
@@ -183,14 +183,14 @@
 <!--Grids, need to specify background color, themes doesnt change text color-->    
     <div>
         <mat-grid-list cols="2" rowHeight="fit" gutterSize="10px" >
-            <mat-grid-tile [attr.color]="themeColor[0]"rowspan="2">1</mat-grid-tile>
-            <mat-grid-tile [attr.color]="themeColor[1]"onclick="console.log('hello')">2</mat-grid-tile>
-            <mat-grid-tile [attr.color]="themeColor[0]">
+            <mat-grid-tile rowspan="2">1</mat-grid-tile>
+            <mat-grid-tile onclick="console.log('hello')">2</mat-grid-tile>
+            <mat-grid-tile>
                 <button mat-mini-fab onclick="console.log('hello')">
                     3
                 </button>
             </mat-grid-tile>
-            <mat-grid-tile [attr.color]="themeColor[2]"colspan="2">4</mat-grid-tile>
+            <mat-grid-tile colspan="2">4</mat-grid-tile>
         </mat-grid-list>
     </div>
 <!--Expandable Tabs-->
@@ -228,7 +228,7 @@
     </mat-accordion>
 <!--Card Container-->
 <!--Seems like the best way to apply a dark background on the elements themselves-->
-    <mat-card class="warn-theme">
+    <mat-card class="primary-theme">
         <mat-card-title>
             Card title
         </mat-card-title>
@@ -243,7 +243,7 @@
         </mat-card-footer>
     </mat-card>
 <!--View Tabs do not have background applied to them-->    
-    <mat-card class="warn-theme">
+    <mat-card class="accent-theme">
         <mat-card-content>       
             <mat-tab-group #myTab (selectedTabChange)="log(myTab.selectedIndex)">
                 <mat-tab label="Label 1">Content 1, index {{myTab.selectedIndex}}</mat-tab>

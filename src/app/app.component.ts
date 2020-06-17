@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ColorPickerService } from './color-picker.service';
+import { Component, OnInit} from '@angular/core';
+//import { ColorPickerService } from './color-picker.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,14 @@ import { ColorPickerService } from './color-picker.service';
 export class AppComponent implements OnInit{
   title = 'material-theme';
   themeClass;
-  constructor(private colorPicker:ColorPickerService){
-    this.themeClass= this.colorPicker.getColorClass()
+  constructor(
+    //private colorPicker:ColorPickerService
+    ){
+    //this.themeClass= this.colorPicker.getColorClass()
   }
+
+
+
   ngOnInit():void{
 
   }

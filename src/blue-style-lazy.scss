@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import './themes/global-class-theme.scss';
+
+@include mat-core();
+
+$primary-blue-theme: mat-palette($mat-blue, 600);
+$accent-blue-theme: mat-palette($mat-amber, 600);
+$warn-blue-theme: mat-palette($mat-grey, 300);
+
+$blue-theme:mat-light-theme($primary-blue-theme,$accent-blue-theme,$warn-blue-theme);
+
+.color-theme{
+    @include angular-material-theme($blue-theme);
+    @include global-class-theme($blue-theme);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

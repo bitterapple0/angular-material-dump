@@ -25,19 +25,6 @@
       color: mat-color($foreground, text);
       background-color: mat-color($warn);
     }
-    mat-list, mat-selection-list, mat-nav-list, mat-grid-tile{
-      color: mat-color($foreground, text);
-      background-color: mat-color($background, card);
-      margin: 1em;
+
       
-      &[color="primary"]{
-        @include _mat-toolbar-color ($primary); // alternative to importing
-      }
-      &[color="accent"]{
-        @include main-colors ($accent);
-      }
-      &[color="warn"]{
-        @include main-colors ($warn);
-      }
-    }  
 }

@@ -27,8 +27,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "extractCss": true,
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/blue-style-lazy.scss",
+                "bundleName": "blue-style",
+                "inject":false
+              },
+
+              {
+                "input": "src/green-style-lazy.scss",
+                "bundleName": "green-style",
+                "inject":false
+              }
             ],
             "scripts": []
           },

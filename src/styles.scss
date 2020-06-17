@@ -1,22 +1,22 @@
 
 @import '~@angular/material/theming';
-// Themes
-@import './themes/blue-theme.scss';
-@import './themes/green-theme.scss';
 // Custom Component Themes that follow theme
 @import './themes/global-class-theme.scss';
 
 // Only include once
 @include mat-core();
 
-.blue-theme{
-    @include angular-material-theme($blue-theme);
-    @include global-class-theme($blue-theme);
+$primary-default-theme: mat-palette($mat-red, 600);
+$accent-default-theme: mat-palette($mat-amber, 600);
+$warn-default-theme: mat-palette($mat-orange, 300);
+
+$default-theme:mat-dark-theme($primary-default-theme,$accent-default-theme,$warn-default-theme);
+
+.color-theme{
+    @include angular-material-theme($default-theme);
+    @include global-class-theme($default-theme);
 }
-.green-theme{
-    @include angular-material-theme($green-theme);
-    @include global-class-theme($green-theme);
-}
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
