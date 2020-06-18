@@ -1,0 +1,54 @@
+
+@mixin notification-theme($info,$success,$warning,$error){
+    .success-notification-overlay,
+    .info-notification-overlay,
+    .warning-notification-overlay,
+    .error-notification-overlay,
+    .default-notification-overlay {
+        border-left: 4px solid;
+        &::before {
+            font-family: "Material Icons";
+            float: left;
+            font-size: 24px;
+            // because we want spaces to be considered in content
+            // https://stackoverflow.com/questions/5467605/add-a-space-after-an-element-using-after
+            white-space: pre;
+        }
+    }
+    .success-notification-overlay {
+        border-left-color: mat-color($success, 400);
+        &::before {
+            content: "\e86c  ";
+            color: mat-color($success, 400);
+        }
+    }
+    .info-notification-overlay{
+      border-left-color: mat-color($info, 400);
+        &::before {
+            content: "\e88e  ";
+            color: mat-color($info, 400);
+        }
+    }
+    .default-notification-overlay {
+        border-left-color: #fff;
+        &::before {
+            color: #fff;
+        }
+    }
+    .warning-notification-overlay{
+      border-left-color: mat-color($warning, 700);
+        &::before {
+            content: "\e002  ";
+            color: mat-color($warning, 700);
+        }
+    }
+    .error-notification-overlay {
+        border-left-color: mat-color($error, 400);
+        &::before {
+            content: "\e000  ";
+            color: mat-color($error, 400);
+        }
+    }
+
+
+}

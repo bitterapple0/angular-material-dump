@@ -64,6 +64,7 @@ const MaterialComponents = [
     MatSortModule,
     MatPaginatorModule,
     MatBadgeModule,
+    MatInputModule,
 
 ]
 

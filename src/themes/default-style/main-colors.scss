@@ -1,4 +1,0 @@
-@mixin main-colors($palette) {
-    background: mat-color($palette);
-    color: mat-color($palette, default-contrast);
-  }

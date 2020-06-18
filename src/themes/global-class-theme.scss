@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 //Import this so code is neater when specifying styles for color
-@import './default-style/main-colors.scss';
+
 
 @mixin global-class-theme($theme) {
     $primary: map-get($theme, primary);

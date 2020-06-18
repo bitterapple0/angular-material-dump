@@ -2,19 +2,26 @@
 @import '~@angular/material/theming';
 // Custom Component Themes that follow theme
 @import './themes/global-class-theme.scss';
+@import './themes/notification-theme.scss';
 
 // Only include once
 @include mat-core();
-
+//Main theme
 $primary-default-theme: mat-palette($mat-red, 600);
 $accent-default-theme: mat-palette($mat-amber, 600);
 $warn-default-theme: mat-palette($mat-orange, 300);
 
 $default-theme:mat-dark-theme($primary-default-theme,$accent-default-theme,$warn-default-theme);
+//Notification theme
+$info: mat-palette($mat-blue);
+$success: mat-palette($mat-green);
+$warning: mat-palette($mat-yellow);
+$error: mat-palette($mat-red);
 
 .color-theme{
     @include angular-material-theme($default-theme);
     @include global-class-theme($default-theme);
+    @include notification-theme($info,$success,$warning,$error)
 }
 
 /* You can add global styles to this file, and also import other style files */

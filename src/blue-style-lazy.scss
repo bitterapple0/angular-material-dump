@@ -1,17 +1,25 @@
 @import '~@angular/material/theming';
 @import './themes/global-class-theme.scss';
+@import './themes/notification-theme.scss';
 
 @include mat-core();
-
+//Main theme
 $primary-blue-theme: mat-palette($mat-blue, 600);
 $accent-blue-theme: mat-palette($mat-amber, 600);
 $warn-blue-theme: mat-palette($mat-grey, 300);
 
 $blue-theme:mat-light-theme($primary-blue-theme,$accent-blue-theme,$warn-blue-theme);
+//Notification theme
+$info: mat-palette($mat-blue);
+$success: mat-palette($mat-green);
+$warning: mat-palette($mat-yellow);
+$error: mat-palette($mat-red);
+
 
 .color-theme{
     @include angular-material-theme($blue-theme);
     @include global-class-theme($blue-theme);
+    @include notification-theme($info,$success,$warning,$error)
 }
 
 html, body { height: 100%; }

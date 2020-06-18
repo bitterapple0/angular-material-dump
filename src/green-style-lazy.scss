@@ -1,17 +1,23 @@
 @import '~@angular/material/theming';
 @import './themes/global-class-theme.scss';
+@import './themes/notification-theme.scss';
 
 @include mat-core();
-
+//Main Theme
 $primary-green-theme: mat-palette($mat-green, 800);
 $accent-green-theme: mat-palette($mat-lime, 800);
 $warn-green-theme: mat-palette($mat-orange, 900);
 
 $green-theme:mat-dark-theme($primary-green-theme,$accent-green-theme,$warn-green-theme);
-
+//Notification theme
+$info: mat-palette($mat-blue);
+$success: mat-palette($mat-green);
+$warning: mat-palette($mat-yellow);
+$error: mat-palette($mat-red);
 .color-theme{
     @include angular-material-theme($green-theme);
     @include global-class-theme($green-theme);
+    @include notification-theme($info,$success,$warning,$error)
 }
 
 html, body { height: 100%; }
