@@ -8,10 +8,12 @@ import { MaterialModule} from './material/material.module'
 import { FormsModule } from '@angular/forms';
 import { SidenavModule } from './sidenav/sidenav.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     routerComponents,
+    
   ],
   imports: [
     BrowserModule,

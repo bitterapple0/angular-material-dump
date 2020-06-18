@@ -4,6 +4,7 @@ import {map, startWith} from 'rxjs/operators'
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotificationsService } from '../notification/notifications.service';
+import { CustomSnackComponent } from '../custom-snack/custom-snack.component';
 
 @Component({
   selector: 'app-kitchen-sink',
@@ -28,7 +29,10 @@ export class KitchenSinkComponent implements OnInit {
   openSnackBar(message, action,){
     this.snackbar.open(message,action,{duration:2000})
   }
-
+  
+  openCustomSnackBar(){
+    this.snackbar.openFromComponent(CustomSnackComponent, {duration: 1000})
+  }
 
   //filter form stuff
   myControl = new FormControl();
