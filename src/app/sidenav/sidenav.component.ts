@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-//import { ColorPickerService } from '../color-picker.service';
+import { ColorPickerService } from '../color-picker.service';
 import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +7,9 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-
+  
   constructor(
-    //private colorPicker: ColorPickerService
+    private colorPicker: ColorPickerService,
     @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
@@ -22,7 +22,12 @@ export class SidenavComponent implements OnInit {
     }
     this.colorPicker.setColorClass(`${colorTheme}-theme`)
   }*/
-
+  //Dark Mode Toggle
+  isDark:boolean = false;
+  toggleDark(){
+    this.colorPicker.switchDarkClass(this.isDark)
+  }
+  //Css Loader
   loadStyle(styleName: string){
     const head = this.document.getElementsByTagName('head')[0];
 

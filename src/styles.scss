@@ -11,7 +11,8 @@ $primary-default-theme: mat-palette($mat-red, 600);
 $accent-default-theme: mat-palette($mat-amber, 600);
 $warn-default-theme: mat-palette($mat-orange, 300);
 
-$default-theme:mat-dark-theme($primary-default-theme,$accent-default-theme,$warn-default-theme);
+$default-theme:mat-light-theme($primary-default-theme,$accent-default-theme,$warn-default-theme);
+$default-dark-theme:mat-dark-theme($primary-default-theme,$accent-default-theme,$warn-default-theme);
 //Notification theme
 $info: mat-palette($mat-blue);
 $success: mat-palette($mat-green);
@@ -21,6 +22,11 @@ $error: mat-palette($mat-red);
 .color-theme{
     @include angular-material-theme($default-theme);
     @include global-class-theme($default-theme);
+    @include notification-theme($info,$success,$warning,$error)
+}
+.color-theme-dark{
+    @include angular-material-theme($default-dark-theme);
+    @include global-class-theme($default-dark-theme);
     @include notification-theme($info,$success,$warning,$error)
 }
 

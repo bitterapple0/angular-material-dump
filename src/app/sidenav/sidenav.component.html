@@ -25,6 +25,12 @@
                 </button>
             </div>    
             <mat-menu #themeMenu="matMenu">
+                <mat-checkbox
+                [(ngModel)]="isDark"
+                (change)= "toggleDark()" 
+                class="mat-menu-item"> <!--Take note of class-->
+                    Dark
+                </mat-checkbox>
                 <button mat-menu-item (click)="loadStyle('blue-style.css')">
                     <div class="color-indicator color-indicator-blue"></div>
                     Blue

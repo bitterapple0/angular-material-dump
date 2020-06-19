@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
-import { OverlayContainer } from '@angular/cdk/overlay';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { SidenavComponent } from './sidenav.component';
 
@@ -13,6 +13,7 @@ import { SidenavComponent } from './sidenav.component';
   imports: [
     CommonModule,
     MaterialModule,
+    FormsModule,
     RouterModule
   ],
   exports: [
@@ -20,8 +21,6 @@ import { SidenavComponent } from './sidenav.component';
   ]
 })
 export class SidenavModule { 
-  constructor(overlayContainer: OverlayContainer) {
-    overlayContainer.getContainerElement().classList.add('color-theme');
-  }
+  constructor() {}
 }
 
