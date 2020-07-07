@@ -9,7 +9,6 @@ export class ColorPickerService {
   subject: BehaviorSubject<string> = new BehaviorSubject('color-theme')
   colorClass$: Observable<string> = this.subject.asObservable()
   constructor(private overlayContainer:OverlayContainer) { 
-    overlayContainer.getContainerElement().classList.remove('cdk-overlay-container')
     overlayContainer.getContainerElement().classList.add('color-theme');
   }
   
@@ -28,7 +27,7 @@ export class ColorPickerService {
     }
   }
   setOverlay(className:string){
-    let currentTheme =this.overlayContainer.getContainerElement().classList[0]
+    let currentTheme =this.overlayContainer.getContainerElement().classList[1]
     this.overlayContainer.getContainerElement().classList.remove(currentTheme)
     this.overlayContainer.getContainerElement().classList.add(className)
   }
