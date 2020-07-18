@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-cdk',
   templateUrl: './cdk.component.html',
-  styleUrls: ['./cdk.component.scss']
+  styleUrls: ['./cdk.component.scss'],
 })
-export class CdkComponent implements OnInit {
+export class CdkComponent implements OnInit{
 
-  constructor() { }
+  items: string[] = Array(1000).fill(1).map( (_, i) => `Item #${i}` );  
+  constructor(){};
+  ngOnInit(): void {};
 
-  ngOnInit(): void {
-  }
 
 }
