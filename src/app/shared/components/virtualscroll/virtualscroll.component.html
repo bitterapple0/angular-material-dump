@@ -1,0 +1,16 @@
+<div class="scroll-container">
+    <h2 class="scroll-header">Activiy Type</h2>
+    <button (click)="scrollLeft()" class="left-btn" mat-icon-button>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <cdk-virtual-scroll-viewport itemSize="300" minBufferPx="300" maxBufferPx="900" orientation="horizontal" class="scroll-view"> 
+        <div *cdkVirtualFor="let item of items" class="scroll-item"> 
+            <div class="image">image here</div>
+            <h3 class="header">Activity Header</h3>
+            <p class="date">Date</p> 
+        </div>
+    </cdk-virtual-scroll-viewport>
+    <button (click)="scrollRight()" class="right-btn" mat-icon-button>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+</div>

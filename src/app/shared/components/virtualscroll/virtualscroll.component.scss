@@ -1,0 +1,105 @@
+@mixin custom-scroll-bar {
+    &::-webkit-scrollbar {
+        border-radius: 10px;
+        height:8px;
+        background:rgb(211, 211, 211) ;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+  }
+.scroll-container{
+    width:100%;
+    display:grid;
+    grid-template-columns: 5% auto 5%;
+    
+    .right-btn{
+        width:100%;
+        justify-self: left;
+        border-radius: 0;
+        height:300px;
+        mat-icon{
+            font-size:40px
+        }
+    }
+
+    .left-btn{
+        width:100%;
+        border-radius: 0;
+        justify-self: right;
+        height:300px;
+        mat-icon{
+            font-size:40px
+        }
+    }
+    .scroll-header{
+        grid-column: 1 / 4;
+        margin-left: 20px;
+    }
+    .scroll-view{
+        margin:10px;
+        height: 300px;
+        justify-self:stretch;
+        @include custom-scroll-bar;
+        
+        .cdk-virtual-scroll-content-wrapper{
+            display:flex;
+            flex-direction: row;
+
+            .scroll-item{
+                width:300px;
+                height:inherit;
+                box-sizing: border-box;
+                min-height: 60px;                    
+                background:transparent;               
+                display: flex;
+                flex-direction: column;
+                overflow:hidden;
+                .image{
+                    width:95%;
+                    height:80%;
+                    background:white;
+                    align-self: flex-start;
+                    text-align: center;          
+                }
+                .header{
+                    margin:0.25em;
+                    line-height: 80%;
+                }
+                .date{
+                    margin:0.25em;
+                    line-height: 90%;
+                }
+            }
+        
+        }
+
+       
+    }        
+}
+
+@media screen and (max-width: 750px){
+    .right-btn{
+        justify-self: left;
+        border-radius: 0;
+        height:300px;
+        mat-icon{
+            font-size:30px !important;
+        }
+    }
+
+    .left-btn{
+        border-radius: 0;
+        justify-self: right;
+        height:300px;
+        mat-icon{
+            font-size:30px !important;
+        }
+    }
+}

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule} from './material/material.module'
 import { FormsModule } from '@angular/forms';
 import { SidenavModule } from './sidenav/sidenav.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SidenavModule } from './sidenav/sidenav.module';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    SidenavModule
+    SidenavModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
