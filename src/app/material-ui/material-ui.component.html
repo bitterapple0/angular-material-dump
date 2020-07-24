@@ -1,10 +1,12 @@
  <!--The difference in how color property affects a button--> 
 <div class="container">
     <div>
-        <button mat-button color="primary">Normal</button>
-        <button mat-raised-button color="warn">Raised</button>
+        <button mat-button color="primary" #button1>Normal</button>
+        <app-onboarding [connectedTo]="button1" text="Use this button to do basic stuff." id="1"></app-onboarding>
+        <button mat-raised-button color="warn" #button2>Raised</button>
+        <app-onboarding [connectedTo]="button2" text="Use this button to do basic stuff." id="2"></app-onboarding>
         <button mat-flat-button color="accent">Flat</button>
-        <button mat-stroked-button color="primary">Stroked</button>
+        <button mat-stroked-button color="primary"(click)="startOnboarding()">Stroked</button>
     </div>
     <!--notice how fab button auto color is accent--> 
     <div>
@@ -110,7 +112,8 @@
     </mat-sidenav-container>
 <!--static Menu-->    
     <div>
-        <button mat-flat-button [matMenuTriggerFor]="myMenu">Menu</button>
+        <button mat-flat-button [matMenuTriggerFor]="myMenu" #button5>Menu</button>
+        <app-onboarding [connectedTo]="button5" text="Use this button to do basic stuff." id="5"></app-onboarding>
         <mat-menu #myMenu="matMenu">
             <button mat-menu-item [matMenuTriggerFor]="subMenu">Sub Menu</button>
             <button mat-menu-item [matMenuTriggerFor]="subMenu2">Other item</button>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { OverlayService } from '../shared/overlay.service';
 @Component({
   selector: 'app-material-ui',
   templateUrl: './material-ui.component.html',
@@ -21,8 +21,10 @@ export class MaterialUiComponent implements OnInit {
   log(index){
     console.log(index)
   }
-  constructor() { }
-
+  constructor(private overlay: OverlayService) { }
+  startOnboarding(){
+    this.overlay.showOverlay(1);
+  }
   ngOnInit(): void {
   }
 

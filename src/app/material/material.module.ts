@@ -32,6 +32,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatBadgeModule } from '@angular/material/badge';
 import { ScrollingModule} from '@angular/cdk/scrolling';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { OverlayModule} from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
 
 const MaterialComponents = [
   MatCheckboxModule,
@@ -69,6 +71,8 @@ const MaterialComponents = [
   MatInputModule,
   ScrollingModule,
   DragDropModule,
+  OverlayModule,
+  PortalModule,
 ]
 
 @NgModule({

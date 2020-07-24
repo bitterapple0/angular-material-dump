@@ -23,5 +23,21 @@
       background-color: mat-color($warn);
     }
 
+    .elevate#onboarding-active {
+      @include mat-elevation-transition;
+      @include mat-elevation(8);
+      z-index: 10000;
+    }
+    
+    .elevate {
+      background: white;
+      position: relative;
       
+    }
+    
+    .my-backdrop {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      z-index: 10;
+    }  
 }
